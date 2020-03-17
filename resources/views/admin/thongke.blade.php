@@ -99,7 +99,7 @@
   						<div class="description-block border-right">
   							<span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
   							<h5 class="description-header">{{number_format($chiphi)}}</h5>
-  							<span class="description-text">Tổng Chi Phí</span>
+  							<span class="description-text"> Chi Phí</span>
   						</div>
   						<!-- /.description-block -->
   					</div>
@@ -108,7 +108,7 @@
   						<div class="description-block border-right">
   							<span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
   							<h5 class="description-header">{{number_format(($tongtienban)-($chiphi))}}</h5>
-  							<span class="description-text">Tổng Lợi Nhuận</span>
+  							<span class="description-text">Lợi Nhuận</span>
   						</div>
   						<!-- /.description-block -->
   					</div>
