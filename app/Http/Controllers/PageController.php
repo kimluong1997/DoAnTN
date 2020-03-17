@@ -21,30 +21,30 @@ use Auth;
 class PageController extends Controller
 {
     public function getSeach(Request $req){
-     $sp= sanpham::where('TenSP','like','%'.$req->key.'%')->orwhere('DonGia',$req->key)->get();
-     return view('page.seach',compact('sp'));
+       $sp= sanpham::where('TenSP','like','%'.$req->key.'%')->orwhere('DonGia',$req->key)->get();
+       return view('page.seach',compact('sp'));
 
+   }
+
+
+   public function getIndex(){
+     $slide=slide::all();
+
+
+     $spmoi=sanpham::where('trangthai','moi')->paginate(4);
+
+
+     $spkm=sanpham::where('giaKM','<>',0)->paginate(8);
+
+     $spcu=sanpham::where('trangthai','cu')->paginate(3);
+
+
+     return view('page.trangchu',compact('slide','spmoi','spkm','spcu'));
  }
 
 
- public function getIndex(){
-   $slide=slide::all();
-   
 
-   $spmoi=sanpham::where('trangthai','moi')->paginate(4);
-
-
-   $spkm=sanpham::where('giaKM','<>',0)->paginate(8);
-
-   $spcu=sanpham::where('trangthai','cu')->paginate(3);
-
-
-   return view('page.trangchu',compact('slide','spmoi','spkm','spcu'));
-}
-
-
-
-public function getloaisp(){
+ public function getloaisp(){
     return view('page.loaisp');
 }
 
@@ -54,7 +54,7 @@ public function getloaisanpham($type){
     $sp_khac=sanpham::where('id_loaisp','<>',$type)->paginate(2);
     $loai=loaisanpham::all();
 
-    
+
 
     return view('page.loaisanpham',compact('sp_theoloai','loai','sp_khac'));
 }
@@ -67,7 +67,7 @@ public function getchitietsanpham(Request $req){
 }
 
 public function getlienhe(){
-   return view('page.lienhe');
+ return view('page.lienhe');
 }
 
 public function getGioiThieu(){
@@ -75,21 +75,18 @@ public function getGioiThieu(){
 }
 
 public function getAddtoCart(Request $req,$id){
-    $product = sanpham::find($id);
+    $sanpham = sanpham::find($id);
     $oldCart = Session('cart')?Session::get('cart'):null;
     $cart = new Cart($oldCart);
-    $cart->add($product, $id);
+    $cart->add($sanpham, $id);
     $req->session()->put('cart',$cart);
     return redirect()->back();
 }
 
+
 public function getCheckout(){
     return view('page.dathang');
 }
-
-
-
-
 
 
 public function postCheckout(Request $req){
@@ -107,17 +104,17 @@ public function postCheckout(Request $req){
     $bill = new hoadon;
     $bill->id_khachhang = $customer->id;
     $bill->NgayDatHang = date('Y-m-d');
-    $bill->TongTien = $cart->totalPrice;
+    $bill->TongTien = $cart->TongTien;
     $bill->HinhThucTT = $req->payment_method;
-    
+
     $bill->save();
 
-    foreach ($cart->items as $key => $value) {
+    foreach ($cart->sanpham as $key => $value) {
         $bill_detail = new hoadonct;
         $bill_detail->id_hoadon = $bill->id;
         $bill_detail->id_sanpham = $key;
-        $bill_detail->SoLuong = $value['qty'];
-        $bill_detail->DonGia = ($value['price']/$value['qty']);
+        $bill_detail->SoLuong = $value['SL'];
+        $bill_detail->DonGia = ($value['Gia']/$value['SL']);
         $bill_detail->save();
     }
     Session::forget('cart');
@@ -153,7 +150,7 @@ public function postSignin(Request $req){
     $user->name = $req->fullname;
     $user->email = $req->email;
     $user->password = Hash::make($req->password);
-    
+
     $user->quyen= $req->quyen;
     $user->save();
     return redirect()->back()->with('thanhcong','Tạo tài khoản thành công');
@@ -175,9 +172,9 @@ public function postLogin(Request $req){
         ]
     );
     $credentials = array('email'=>$req->email,'password'=>$req->password);
-    
 
-    
+
+
     if(Auth::attempt($credentials)){
 
         return redirect()->back()->with(['flag'=>'success','message'=>'Đăng nhập thành công']);

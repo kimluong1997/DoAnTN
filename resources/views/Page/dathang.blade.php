@@ -64,15 +64,15 @@
 							<div class="your-order-item">
 								<div>
 								@if(Session::has('cart'))
-								@foreach($product_cart as $cart)
+								@foreach($sanpham_cart as $cart)
 								<!--  one item	 -->
 									<div class="media">
-										<img width="25%" src="source\image\product\{{$cart['item']['img']}}" alt="" class="pull-left">
+										<img width="25%" src="source\image\product\{{$cart['SP']['img']}}" alt="" class="pull-left">
 										<div class="media-body">
-											<p class="font-large">{{$cart['item']['TenSP']}}</p>
+											<p class="font-large">{{$cart['SP']['TenSP']}}</p>
 											
-											<span class="color-gray your-order-info">Đơn giá: {{number_format($cart['price'])}} đồng</span>
-											<span class="color-gray your-order-info">Số lượng: {{$cart['qty']}}</span>
+											<span class="color-gray your-order-info">Đơn giá: {{number_format($cart['Gia'])}} đồng</span>
+											<span class="color-gray your-order-info">Số lượng: {{$cart['SL']}}</span>
 										</div>
 									</div>
 								<!-- end one item -->
@@ -83,7 +83,7 @@
 							</div>
 							<div class="your-order-item">
 								<div class="pull-left"><p class="your-order-f18">Tổng tiền:</p></div>
-								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif đồng</h5></div>
+								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($TongTien)}}@else 0 @endif đồng</h5></div>
 								<div class="clearfix"></div>
 							</div>
 						</div>
