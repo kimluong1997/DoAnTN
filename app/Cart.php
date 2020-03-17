@@ -4,45 +4,45 @@ namespace App;
 
 class Cart
 {
-	public $items = null;
-	public $totalQty = 0;
-	public $totalPrice = 0;
+	public $sanpham = null;
+	public $TongSL = 0;
+	public $TongTien = 0;
 
 	public function __construct($oldCart){
 		if($oldCart){
-			$this->items = $oldCart->items;
-			$this->totalQty = $oldCart->totalQty;
-			$this->totalPrice = $oldCart->totalPrice;
+			$this->sanpham = $oldCart->sanpham;
+			$this->TongSL = $oldCart->TongSL;
+			$this->TongTien = $oldCart->TongTien;
 		}
 	}
 
-	public function add($item, $id){
-		$giohang = ['qty'=>0, 'price' => $item->DonGia, 'item' => $item];
-		if($this->items){
-			if(array_key_exists($id, $this->items)){
-				$giohang = $this->items[$id];
+	public function add($SP, $id){
+		$giohang = ['SL'=>0, 'Gia' => $SP->DonGia, 'SP' => $SP];
+		if($this->sanpham){
+			if(array_key_exists($id, $this->sanpham)){
+				$giohang = $this->sanpham[$id];
 			}
 		}
-		$giohang['qty']++;
-		$giohang['price'] = $item->DonGia * $giohang['qty'];
-		$this->items[$id] = $giohang;
-		$this->totalQty++;
-		$this->totalPrice += $item->DonGia;
+		$giohang['SL']++;
+		$giohang['Gia'] = $SP->DonGia * $giohang['SL'];
+		$this->sanpham[$id] = $giohang;
+		$this->TongSL++;
+		$this->TongTien += $SP->DonGia;
 	}
 	//xóa 1
 	public function reduceByOne($id){
-		$this->items[$id]['qty']--;
-		$this->items[$id]['price'] -= $this->items[$id]['item']['price'];
-		$this->totalQty--;
-		$this->totalPrice -= $this->items[$id]['item']['price'];
-		if($this->items[$id]['qty']<=0){
-			unset($this->items[$id]);
+		$this->sanpham[$id]['SL']--;
+		$this->sanpham[$id]['Gia'] -= $this->sanpham[$id]['SP']['Gia'];
+		$this->TongSL--;
+		$this->TongTien -= $this->sanpham[$id]['SP']['Gia'];
+		if($this->sanpham[$id]['SL']<=0){
+			unset($this->sanpham[$id]);
 		}
 	}
 	//xóa nhiều
 	public function removeItem($id){
-		$this->totalQty -= $this->items[$id]['qty'];
-		$this->totalPrice -= $this->items[$id]['price'];
-		unset($this->items[$id]);
+		$this->TongSL -= $this->sanpham[$id]['SL'];
+		$this->TongTien -= $this->sanpham[$id]['Gia'];
+		unset($this->sanpham[$id]);
 	}
 }

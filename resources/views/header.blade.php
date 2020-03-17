@@ -221,7 +221,7 @@ divserzeugen();
 	<div class="beta-comp">
 		@if(Session::has('cart'))
 		<div class="cart">
-			<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (@if(Session::has('cart')){{Session('cart')->totalQty}}@else Trống @endif) 
+			<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (@if(Session::has('cart')){{Session('cart')->TongSL}}@else Trống @endif) 
 
 
 				<a href="{{route('dathang')}}" class="beta-btn primary text-center" >Thanh toán <i class="fa fa-chevron-right"></i></a>
@@ -238,16 +238,16 @@ divserzeugen();
 
 				</div>
 
-				@foreach($product_cart as $product)
+				@foreach($sanpham_cart as $product)
 
 				<div class="cart-item">
 					<div class="media">
-						<a class="pull-left" href="#"><img src="source\image\product\{{$product['item']['img']}}" alt=""></a>
+						<a class="pull-left" href="#"><img src="source\image\product\{{$product['SP']['img']}}" alt=""></a>
 						<div class="media-body">
-							<span class="cart-item-title">{{$product['item']['TenSP']}}</span>
+							<span class="cart-item-title">{{$product['SP']['TenSP']}}</span>
 							<a class="cart-item-delete" href=""><i class="fa fa-times"></i></a>
 
-							<span class="cart-item-amount"> {{$product['qty']}} * <span> {{ number_format( $product['item']['DonGia'])}} đồng </span></span>
+							<span class="cart-item-amount"> {{$product['SL']}} * <span> {{ number_format( $product['SP']['DonGia'])}} đồng </span></span>
 						</div>
 					</div>
 				</div>
@@ -255,67 +255,61 @@ divserzeugen();
 
 
 				<div class="cart-caption">
-								<!-- 	<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">  {{ number_format( Session ('cart') ->  totalPrice)}} đồng </span></div>
-									<div class="clearfix"></div> -->
-
-									<!-- <div class="center">
-										<div class="space10">&nbsp;</div>
-										<a href="checkout.html" class="beta-btn primary text-center">Thanh toán <i class="fa fa-chevron-right"></i></a>
-									</div> -->
-								</div>
-							</div>
-						</div> 
-						@endif
-					</div>
+					
 				</div>
-				<div class="clearfix"></div>
+			</div>
+		</div> 
+		@endif
+	</div>
+</div>
+<div class="clearfix"></div>
 
 
-			</div> <!-- .header-body -->
-			<div class="header-bottom" style="background-color: #FF9933; padding: 10px; ">
+</div> <!-- .header-body -->
+<div class="header-bottom" style="background-color: #FF9933; padding: 10px; ">
+	<div class="container">
+		<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>AAA</span> <i class="fa fa-bars"></i></a>
+		<div class="visible-xs clearfix"></div>
+		<nav class="main-menu">
+			<ul class="l-inline ov">
+				<li><a href="{{route('trangchu')}}"style="color: black; font-size: 20px ;font-weight: bold; font-style: normal;"  > <b> Trang chủ </b> </a></li>
+				<li><a href="" style="color: black ;font-size: 20px ;font-weight: bold; font-style: normal;"> <b> Danh mục sản phẩm</b></a>
+					<ul class="sub-menu">
+						@foreach($loai_sp as $loai)
+
+						<li><a href="{{route('loaisanpham',$loai->id)}}">{{$loai->TenSP}}</a></li>
+						@endforeach
+
+					</ul>
+				</li>
+				<li><a href="{{route('gioithieu')}}" style="color: black;font-size: 20px ;font-weight: bold; font-style: normal;"><b>Tin tức BIKER</b></a></li>
+				<li><a href="{{route('lienhe')}}" style="color: black;font-size: 20px ;font-weight: bold; font-style: normal;"><b>Liên hệ</b></a></li>
+
 				<div class="container">
-					<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>AAA</span> <i class="fa fa-bars"></i></a>
-					<div class="visible-xs clearfix"></div>
-					<nav class="main-menu">
-						<ul class="l-inline ov">
-							<li><a href="{{route('trangchu')}}"style="color: black; font-size: 20px ;font-weight: bold; font-style: normal;"  > <b> Trang chủ </b> </a></li>
-							<li><a href="" style="color: black ;font-size: 20px ;font-weight: bold; font-style: normal;"> <b> Danh mục sản phẩm</b></a>
-								<ul class="sub-menu">
-									@foreach($loai_sp as $loai)
 
-									<li><a href="{{route('loaisanpham',$loai->id)}}">{{$loai->TenSP}}</a></li>
-									@endforeach
-
-								</ul>
-							</li>
-							<li><a href="{{route('gioithieu')}}" style="color: black;font-size: 20px ;font-weight: bold; font-style: normal;"><b>Tin tức BIKER</b></a></li>
-							<li><a href="{{route('lienhe')}}" style="color: black;font-size: 20px ;font-weight: bold; font-style: normal;"><b>Liên hệ</b></a></li>
-
-							<div class="container">
-
-								<div class="pull-right auto-width-right">
-									<ul class="top-details menu-beta l-inline">
+					<div class="pull-right auto-width-right">
+						<ul class="top-details menu-beta l-inline">
 
 
 
-										@if(Auth::check())
-										<li><a href="" style="color: #0000EE">Chào {{Auth::user()->name}}</a></li>
-										<li><a href="{{route('dangxuat')}}" style="color: #0000EE">Đăng xuất</a></li>
-										@else
-										<li><a href="{{route('dangki')}}" style="color: #0000EE">Đăng kí</a></li>
-										<li><a href="{{route('dangnhap')}}" style="color: #0000EE">Đăng nhập</a></li>
-										@endif
+							@if(Auth::check())
+							<li><a href="" style="color: #0000EE">Chào {{Auth::user()->name}}</a></li>
+							<li><a href="{{route('dangxuat')}}" style="color: #0000EE">Đăng xuất</a></li>
+							@else
+							<li><a href="{{route('dangki')}}" style="color: #0000EE">Đăng kí</a></li>
+							<li><a href="{{route('dangnhap')}}" style="color: #0000EE">Đăng nhập</a></li>
+							@endif
 
-
-									</ul>
-								</div>
-								<div class="clearfix"></div>
-							</div> <!-- .container -->
 
 						</ul>
-
-					</nav>
+					</div>
+					<div class="clearfix"></div>
 				</div> <!-- .container -->
-			</div> <!-- .header-bottom -->
-		</div> 
+
+			</ul>
+
+		</nav>
+	</div> <!-- .container -->
+</div> <!-- .header-bottom -->
+</div> 
 
