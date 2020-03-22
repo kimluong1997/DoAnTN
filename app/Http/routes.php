@@ -35,6 +35,8 @@ Route::get('add-to-cart/{id}',[
 	'uses'=>'PageController@getAddtoCart'
 ]);
 
+
+
 Route::get('dat-hang',[
 	'as'=>'dathang',
 	'uses'=>'PageController@getCheckout'

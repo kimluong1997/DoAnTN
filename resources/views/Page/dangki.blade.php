@@ -47,8 +47,6 @@
 						</div>
 
 						
-
-
 					
 						<div class="form-block">
 							<label for="phone">Password*</label>

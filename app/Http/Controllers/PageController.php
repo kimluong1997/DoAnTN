@@ -130,6 +130,7 @@ public function getSignin(){
     return view('page.dangki');
 }
 
+
 public function postSignin(Request $req){
     $this->validate($req,
         [
@@ -149,11 +150,12 @@ public function postSignin(Request $req){
     $user = new User();
     $user->name = $req->fullname;
     $user->email = $req->email;
-    $user->password = Hash::make($req->password);
 
+     $user->password = Hash::make($req->password); 
+   //mahoaMD5
     $user->quyen= $req->quyen;
     $user->save();
-    return redirect()->back()->with('thanhcong','Tạo tài khoản thành công');
+    return redirect()->back()->with('thanhcong','Tạo tài khoản thành công');// with(tên_session, nội dung) 
 }
 
 
