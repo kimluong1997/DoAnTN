@@ -1,4 +1,4 @@
-  @extends('admin.layout.index')
+@extends('admin.layout.index')
 
 @section('content')
 <div>
@@ -56,7 +56,7 @@
             <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Sản Phẩm Khuyến Mại</span>
+              <span class="info-box-text">Sản Phẩm KM</span>
               <span class="info-box-number">{{count($sanpham)}}</span>
             </div>
             <!-- /.info-box-content -->
@@ -107,7 +107,7 @@
             <div class="box-body">
               <div class="row">
 
-         <!-- Sơ đồ thống kê-->
+                <!-- Sơ đồ thống kê-->
                 <div class="col-md-8">
                   <p class="text-center">
                     <strong>TOTAL: 15 MARCH, 2020 - 21 MARCH, 2020</strong>
@@ -115,81 +115,108 @@
 
                   <div class="chart">
                     <!-- Sales Chart Canvas -->
-                  <div>
-                  <svg height="300" version="1.1" width="681" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+                    <div>
+                      <svg height="300" version="1.1" width="681" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;">
+                        <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc>
+                        <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
 
 
-                    <text x="49.546875" y="261" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text>
+                        <text x="49.546875" y="261" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal">
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan>
+                        </text>
 
 
-                    <path fill="none" stroke="#aaaaaa" d="M62.046875,261H656" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                        <path fill="none" stroke="#aaaaaa" d="M62.046875,261H656" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
 
 
-                    <text x="49.546875" y="202" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">5M</tspan></text>
-
-
-
-
-                    <path fill="none" stroke="#aaaaaa" d="M62.046875,202H656" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="49.546875" y="143" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">10M</tspan></text><path fill="none" stroke="#aaaaaa" d="M62.046875,143H656" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-
-
-                    <text x="49.546875" y="84" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal">
-
-
-                    <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">15M</tspan></text><path fill="none" stroke="#aaaaaa" d="M62.046875,84H656" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-
-
-                    <text x="49.546875" y="25" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal">
-
-
-                    <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">20M</tspan></text><path fill="none" stroke="#aaaaaa" d="M62.046875,25H656" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-
-
-
-                    <text x="524" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">CN</tspan></text>
-
-
-                    <text x="458" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 7</tspan></text>
-
-                     <text x="392" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 6</tspan></text>
-
-                       <text x="326" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 5</tspan></text>
+                        <text x="49.546875" y="202" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal">
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">5M</tspan>
+                        </text>
 
 
 
 
-                    <text x="260" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 4</tspan></text>
-
-                     <text x="194" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 3</tspan></text>
-
-                       <text x="128" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 2</tspan></text>
-
+                        <path fill="none" stroke="#aaaaaa" d="M62.046875,202H656" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="49.546875" y="143" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal">
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">10M</tspan>
+                        </text>
+                        <path fill="none" stroke="#aaaaaa" d="M62.046875,143H656" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
 
 
+                        <text x="49.546875" y="84" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal">
 
-                   
-                  
-                
 
-                  <circle cx="128" cy="228.2196" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">15M</tspan>
+                        </text>
+                        <path fill="none" stroke="#aaaaaa" d="M62.046875,84H656" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
 
-                  <circle cx="194" cy="203.0384" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
 
-                  <circle cx="260" cy="216.5494" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+                        <text x="49.546875" y="25" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal">
 
-                  <circle cx="326" cy="180.642" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
 
-                  <circle cx="392" cy="194.094" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">20M</tspan>
+                        </text>
+                        <path fill="none" stroke="#aaaaaa" d="M62.046875,25H656" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
 
-                  <circle cx="458" cy="204.124" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
 
-                  <circle cx="524" cy="83.1386" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
 
-                  
+                        <text x="524" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)">
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">CN</tspan>
+                        </text>
 
-                </svg>
-                   
-                  </div>
+
+                        <text x="458" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)">
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 7</tspan>
+                        </text>
+
+                        <text x="392" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)">
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 6</tspan>
+                        </text>
+
+                        <text x="326" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)">
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 5</tspan>
+                        </text>
+
+
+
+
+                        <text x="260" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)">
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 4</tspan>
+                        </text>
+
+                        <text x="194" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)">
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 3</tspan>
+                        </text>
+
+                        <text x="128" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)">
+                          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thứ 2</tspan>
+                        </text>
+
+
+
+
+
+
+
+
+                        <circle cx="128" cy="228.2196" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+
+                        <circle cx="194" cy="203.0384" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+
+                        <circle cx="260" cy="216.5494" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+
+                        <circle cx="326" cy="180.642" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+
+                        <circle cx="392" cy="194.094" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+
+                        <circle cx="458" cy="204.124" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+
+                        <circle cx="524" cy="83.1386" r="6" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+
+
+
+                      </svg>
+
+                    </div>
                   </div>
                   <!-- /.chart-responsive -->
                 </div>
@@ -241,7 +268,7 @@
               <!-- /.row -->
             </div>
             <!-- ./box-body -->
-           
+
             <!-- /.box-footer -->
           </div>
           <!-- /.box -->
@@ -251,14 +278,14 @@
       <!-- /.row -->
 
       <!-- Main row -->
-    <div class="row">
+      <div class="row">
         <!-- Left col -->
         <div class="col-md-8">
           <!-- MAP & BOX PANE -->
-        
+
           <!-- /.box -->
           <div class="row">
-          
+
           </div>
           <!-- /.row -->
 
@@ -278,31 +305,38 @@
               <div class="table-responsive">
                 <table class="table no-margin">
                   <thead>
-                  <tr>
-                    <th>Mã ID</th>
-                    <th>Mã Khách Hàng</th>
-                    <th>Ngày Đặt</th>
-                    <th>HT Thanh Toán</th>
-                    <th>Tổng Tiền</th>
-                  </tr>
+                    <tr>
+                      <th>Mã ID</th>
+                      <th>Mã Khách Hàng</th>
+                      <th>Ngày Đặt</th>
+                      <th>HT Thanh Toán</th>
+                      <th>Tổng Tiền</th>
+                    </tr>
                   </thead>
                   <tbody>
-                  @foreach($hoadon as $hd)  
-                  <tr>
-                    <td><a href="admin/hoadonct/danhsach">{{$hd->id}}</a></td>
-                    <td><a href="admin/khachhang/danhsach">{{$hd->id_khachhang}}</a></td>
+                    @foreach($hoadon as $hd)
+                    <tr>
+                      <td><a href="admin/hoadonct/danhsach" class="id-color">{{$hd->id}}</a></td>
+                      <td><a href="admin/khachhang/danhsach" class="id-color">{{$hd->id_khachhang}}</a></td>
 
-                    <td>{{$hd->NgayDatHang}}</td>
-                       @if($hd->HinhThucTT=='COD')
-                     <td><span class="label label-success">COD</span></td>
-                     @else
-                     <td><span class="label label-success">ATM</span></td>
-                       @endif
-                    <td>{{$hd->TongTien}}</td>
-                  </tr>
-                  @endforeach
+                      <td>{{$hd->NgayDatHang}}</td>
+                      @if($hd->HinhThucTT=='COD')
+                      <td><span class="label label-success">COD</span></td>
+                      @else
+                      <td><span class="label label-success">ATM</span></td>
+                      @endif
+                      <td>{{$hd->TongTien}}</td>
+                    </tr>
+
+                    @endforeach
                   </tbody>
+                  <style>
+                    a.id-color {
+                      color: black;
+                    }
+                  </style>
                 </table>
+
               </div>
               <!-- /.table-responsive -->
             </div>
@@ -330,8 +364,8 @@
                 <div class="progress-bar" style="width: 50%"></div>
               </div>
               <span class="progress-description">
-                    50% Increase in 30 Days
-                  </span>
+                50% Increase in 30 Days
+              </span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -347,8 +381,8 @@
                 <div class="progress-bar" style="width: 20%"></div>
               </div>
               <span class="progress-description">
-                    20% Increase in 30 Days
-                  </span>
+                20% Increase in 30 Days
+              </span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -364,8 +398,8 @@
                 <div class="progress-bar" style="width: 70%"></div>
               </div>
               <span class="progress-description">
-                    70% Increase in 30 Days
-                  </span>
+                70% Increase in 30 Days
+              </span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -381,19 +415,19 @@
                 <div class="progress-bar" style="width: 40%"></div>
               </div>
               <span class="progress-description">
-                    40% Increase in 30 Days
-                  </span>
+                40% Increase in 30 Days
+              </span>
             </div>
             <!-- /.info-box-content -->
           </div>
           <!-- /.info-box -->
 
           <div class="box box-default">
-            
+
             <!-- /.box-header -->
             <div class="box-body">
               <div class="row">
-                
+
                 <!-- /.col -->
                 <div class="col-md-4">
                   <ul class="chart-legend clearfix">
@@ -424,20 +458,20 @@
 
           <!-- PRODUCT LIST -->
           <div class="box box-primary">
-            
+
             <!-- /.box-header -->
-            
+
             <!-- /.box-body -->
-            
+
             <!-- /.box-footer -->
           </div>
           <!-- /.box -->
         </div>
         <!-- /.col -->
-                                      </div>
+      </div>
       <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>
-  </div>  
-   @endsection    
+</div>
+@endsection

@@ -1,28 +1,28 @@
 @extends('master')
 @section('content')
 <div class="inner-header">
-		<div class="container">
-			<div class="pull-left">
-				<h6 class="inner-title">Đặt hàng</h6>
-			</div>
-			<div class="pull-right">
-				<div class="beta-breadcrumb">
-					<a href="index.html">Trang chủ</a> / <span>Đặt hàng</span>
-				</div>
-			</div>
-			<div class="clearfix"></div>
+	<div class="container">
+		<div class="pull-left">
+
 		</div>
+		<div class="pull-right">
+			<div class="beta-breadcrumb">
+				<a href="index.html">Trang chủ</a> / <span>Đặt hàng</span>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
 </div>
 
 <div class="container">
 	<div id="content">
-		
+
 		<form action="{{route('dathang')}}" method="post" class="beta-form-checkout">
 			<input type="hidden" name="_token" value="{{csrf_token()}}">
-			<div class="row">@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</div>
+			<div class="row-tt">@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</div>
 			<div class="row">
 				<div class="col-sm-6">
-					<h4>Đặt hàng</h4>
+					<button class="titlee">Đặt hàng</button>
 					<div class="space20">&nbsp;</div>
 
 					<div class="form-block">
@@ -33,7 +33,7 @@
 						<label>Giới tính </label>
 						<input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
 						<input id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 10%"><span>Nữ</span>
-									
+
 					</div>
 
 
@@ -44,52 +44,97 @@
 
 					<div class="form-block">
 						<label for="adress">Địa chỉ*</label>
-						<input type="text" id="address" name="address" placeholder="" required>
+						<input type="text" id="address" name="address" placeholder="Địa chỉ" required>
 					</div>
-					
+
 
 					<div class="form-block">
 						<label for="phone">Điện thoại*</label>
-						<input type="text" id="phone" name="phone" required>
+						<input type="text" id="phone" name="phone" placeholder="Điện thoại" required>
 					</div>
-					
+
 					<div class="form-block">
 						<label for="notes">Ghi chú</label>
 						<textarea id="notes" name="notes"></textarea>
 					</div>
+					<style>
+						.form-block input,
+						.form-block select,
+						.beta-form-checkout textarea {
+							width: 60%;
+							overflow: hidden;
+							border-radius: 7px;
+							border-color: #FF9933;
+						}
+
+						button.titlee {
+							border-color: FF9933;
+							background-color: #FF9933;
+							height: 30px;
+							width: auto;
+							text-align: center;
+							color: black;
+							padding: 0px 10px;
+							border-radius: 7px;
+							font-size: 18px;
+							border-color: #FF9933;
+
+						}
+
+						h5.tiltle {
+							background-color: #FF9933;
+							height: auto;
+							width: auto;
+							text-align: center;
+							color: black;
+							padding: 0px 10px;
+							border-radius: 7px;
+							font-size: 18px;
+							border-color: #FF9933;
+
+						}
+					</style>
 				</div>
 				<div class="col-sm-6">
 					<div class="your-order">
-						<div class="your-order-head"><h5>Đơn hàng của bạn</h5></div>
+						<div class="your-order-head">
+							<h5 class="tiltle">Đơn hàng của bạn</h5>
+						</div>
 						<div class="your-order-body" style="padding: 0px 10px">
 							<div class="your-order-item">
 								<div>
-								@if(Session::has('cart'))
-								@foreach($sanpham_cart as $cart)
-								<!--  one item	 -->
+									@if(Session::has('cart'))
+									@foreach($sanpham_cart as $cart)
+									<!--  one item	 -->
 									<div class="media">
 										<img width="25%" src="source\image\product\{{$cart['SP']['img']}}" alt="" class="pull-left">
 										<div class="media-body">
 											<p class="font-large">{{$cart['SP']['TenSP']}}</p>
-											
+
 											<span class="color-gray your-order-info">Đơn giá: {{number_format($cart['Gia'])}} đồng</span>
 											<span class="color-gray your-order-info">Số lượng: {{$cart['SL']}}</span>
 										</div>
 									</div>
-								<!-- end one item -->
-								@endforeach
-								@endif
+									<!-- end one item -->
+									@endforeach
+									@endif
 								</div>
 								<div class="clearfix"></div>
 							</div>
 							<div class="your-order-item">
-								<div class="pull-left"><p class="your-order-f18">Tổng tiền:</p></div>
-								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($TongTien)}}@else 0 @endif đồng</h5></div>
+								<div class="pull-left">
+									<p class="your-order-f18">Tổng tiền:</p>
+								</div>
+								<div class="pull-right">
+									<h5 class="color-black">@if(Session::has('cart')){{number_format($TongTien)}}@else 0 @endif đồng</h5>
+								</div>
 								<div class="clearfix"></div>
 							</div>
 						</div>
-						<div class="your-order-head"><h5>Hình thức thanh toán</h5></div>
-						
+						<div class="your-order-head">
+							<h5 class="tiltle">Hình thức thanh toán</h5>
+						</div>
+
 						<div class="your-order-body">
 							<ul class="payment_methods methods">
 								<li class="payment_method_bacs">
@@ -97,7 +142,7 @@
 									<label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
 									<div class="payment_box payment_method_bacs" style="display: block;">
 										Cửa hàng sẽ gửi hàng đến địa chỉ của bạn, bạn xem hàng rồi thanh toán tiền cho nhân viên giao hàng
-									</div>						
+									</div>
 								</li>
 
 								<li class="payment_method_cheque">
@@ -108,9 +153,9 @@
 										<br>- Số tài khoản: 123 456 789
 										<br>- Chủ TK: Nguyễn Kim Lương
 										<br>- Ngân hàng ACB, Chi nhánh Vinh
-									</div>						
+									</div>
 								</li>
-								
+
 							</ul>
 						</div>
 

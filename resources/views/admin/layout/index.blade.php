@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Khóa Học Lập Trình Laravel Framework 5.x Tại Khoa Phạm">
-    <meta name="author" content="">
-    <title>AD KIMLUONG RC</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>AD KIMLUONG RC</title>
 
-   <base href="{{asset('')}}">
-    <!-- Bootstrap Core CSS -->
-    <link href="ad_asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <base href="{{asset('')}}">
+  <!-- Bootstrap Core CSS -->
+  <link href="ad_asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- MetisMenu CSS -->
-    <link href="ad_asset/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+  <!-- MetisMenu CSS -->
+  <link href="ad_asset/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="ad_asset/dist/css/sb-admin-2.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="ad_asset/dist/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="ad_asset/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom Fonts -->
+  <link href="ad_asset/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- DataTables CSS -->
-    <link href="ad_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+  <!-- DataTables CSS -->
+  <link href="ad_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
 
-    <!-- DataTables Responsive CSS -->
-    <link href="ad_asset/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+  <!-- DataTables Responsive CSS -->
+  <link href="ad_asset/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
 
 
-      <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Admin KL SHOP | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
@@ -56,30 +57,55 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;box-sizing: content-box;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style>
- 
+  <style type="text/css">
+    .jqstooltip {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      visibility: hidden;
+      background: rgb(0, 0, 0) transparent;
+      background-color: rgba(0, 0, 0, 0.6);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+      color: white;
+      font: 10px arial, san serif;
+      text-align: left;
+      white-space: nowrap;
+      padding: 5px;
+      border: 1px solid white;
+      box-sizing: content-box;
+      z-index: 10000;
+    }
+
+    .jqsfield {
+      color: white;
+      font: 10px arial, san serif;
+      text-align: left;
+    }
+  </style>
+
 
 </head>
 
 <body>
 
-    <div id="wrapper">
+  <div id="wrapper">
 
-        <!-- Navigation -->
-     @include('admin.layout.header')
+    <!-- Navigation -->
+    @include('admin.layout.header')
 
-        <!-- Page Content -->
-       @yield('content')
-        <!-- /#page-wrapper -->
+    <!-- Page Content -->
+    @yield('content')
+    <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+  </div>
+  <!-- /#wrapper -->
 
-    <!-- jQuery -->
-  
+  <!-- jQuery -->
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-   <footer class="main-footer">
+
+  <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+  <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
@@ -88,35 +114,35 @@
   </footer>
 
 
-     <!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- Sparkline -->
-<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap  -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- SlimScroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- ChartJS -->
-<script src="bower_components/chart.js/Chart.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+  <!-- jQuery 3 -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="bower_components/fastclick/lib/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.min.js"></script>
+  <!-- Sparkline -->
+  <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+  <!-- jvectormap  -->
+  <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <!-- SlimScroll -->
+  <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <!-- ChartJS -->
+  <script src="bower_components/chart.js/Chart.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="dist/js/pages/dashboard2.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="dist/js/demo.js"></script>
 
 
-<div class="jvectormap-label" style="left: 551px; top: 1054px; display: none;">Russia</div>
+  <div class="jvectormap-label" style="left: 551px; top: 1054px; display: none;">Russia</div>
 
-<div>
-  
+  <div>
 
-</div>
+
+  </div>
 
 </body>
 

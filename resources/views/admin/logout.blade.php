@@ -1,1 +1,1 @@
- return view('page.dangnhap');
+ return view('admin.login');
